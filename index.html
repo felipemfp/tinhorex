@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Englebert&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" type="image/png" href="./favicon.png" />
@@ -23,7 +23,7 @@
       content="https://felipemfp.dev/tinhorex/og.jpg"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:updated_time" content="1755640832" />
+    <meta property="og:updated_time" content="1755644755" />
     <style>
       body {
         height: 100vh;
@@ -73,21 +73,53 @@
         transform: translate(-50%, -50%);
         padding: 12px 16px;
         border-radius: 50px;
-        font-size: 16px;
+        font-size: 15px;
         text-align: center;
-        font-family: "Patrick Hand SC", cursive;
+        font-family: "Englebert", cursive;
         font-weight: 400;
         font-style: normal;
         color: #618643;
         text-decoration: underline;
         cursor: pointer;
       }
+
+      @keyframes pulse {
+        0% {
+          transform: translate(3%, 50.5%) rotate(105deg) scale(0.18);
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        }
+
+        70% {
+          transform: translate(3%, 50.5%) rotate(105deg) scale(0.20);
+          box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        }
+
+        100% {
+          transform: translate(3%, 50.5%) rotate(105deg) scale(0.18);
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+      }
+
+      .paper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: transparent;
+        width: 100%;
+        height: 80%;
+        transform: translate(3%, 50.5%) rotate(105deg) scale(0.20);
+        border-radius: 100%;
+        animation: pulse 2s infinite;
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+      }
     </style>
   </head>
   <body>
-    <div id="cover" class="box"></div>
+    <div id="cover" class="box">
+      <div class="paper"></div>
+    </div>
     <div id="invite" class="box invite hidden">
-      <div id="rsvp" class="rsvp">RSVP</div>
+      <div id="rsvp" class="rsvp">Confirmar presença</div>
     </div>
     <audio src="./dinosaur-roar-390283.mp3" id="roar" preload="auto"></audio>
     <audio
